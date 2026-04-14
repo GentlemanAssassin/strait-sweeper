@@ -551,7 +551,10 @@
       }
       flagCountEl.textContent = flagCount;
     } else {
-      statusEl.textContent = 'Struck a mine.';
+      // Strait's closed. Price spikes.
+      timer = Math.round((20.28 - BASE_PRICE) / PRICE_PER_SEC);
+      updatePumpPrice();
+      statusEl.textContent = 'Struck a mine. Pump jumps to $20.28/gal.';
       statusEl.className = 'status lost';
     }
   }
